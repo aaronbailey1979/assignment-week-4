@@ -1,0 +1,60 @@
+The final dataset "final_data" (180 observations, 68 variables),
+are presented below and are obtained by the code in "run_analysis.R"
+
+[1] "subject"                             "activity_level"                     
+ [3] "mean_of_tBodyAcc-mean()-X"           "mean_of_tBodyAcc-mean()-Y"          
+ [5] "mean_of_tBodyAcc-mean()-Z"           "mean_of_tBodyAcc-std()-X"           
+ [7] "mean_of_tBodyAcc-std()-Y"            "mean_of_tBodyAcc-std()-Z"           
+ [9] "mean_of_tGravityAcc-mean()-X"        "mean_of_tGravityAcc-mean()-Y"       
+[11] "mean_of_tGravityAcc-mean()-Z"        "mean_of_tGravityAcc-std()-X"        
+[13] "mean_of_tGravityAcc-std()-Y"         "mean_of_tGravityAcc-std()-Z"        
+[15] "mean_of_tBodyAccJerk-mean()-X"       "mean_of_tBodyAccJerk-mean()-Y"      
+[17] "mean_of_tBodyAccJerk-mean()-Z"       "mean_of_tBodyAccJerk-std()-X"       
+[19] "mean_of_tBodyAccJerk-std()-Y"        "mean_of_tBodyAccJerk-std()-Z"       
+[21] "mean_of_tBodyGyro-mean()-X"          "mean_of_tBodyGyro-mean()-Y"         
+[23] "mean_of_tBodyGyro-mean()-Z"          "mean_of_tBodyGyro-std()-X"          
+[25] "mean_of_tBodyGyro-std()-Y"           "mean_of_tBodyGyro-std()-Z"          
+[27] "mean_of_tBodyGyroJerk-mean()-X"      "mean_of_tBodyGyroJerk-mean()-Y"     
+[29] "mean_of_tBodyGyroJerk-mean()-Z"      "mean_of_tBodyGyroJerk-std()-X"      
+[31] "mean_of_tBodyGyroJerk-std()-Y"       "mean_of_tBodyGyroJerk-std()-Z"      
+[33] "mean_of_tBodyAccMag-mean()"          "mean_of_tBodyAccMag-std()"          
+[35] "mean_of_tGravityAccMag-mean()"       "mean_of_tGravityAccMag-std()"       
+[37] "mean_of_tBodyAccJerkMag-mean()"      "mean_of_tBodyAccJerkMag-std()"      
+[39] "mean_of_tBodyGyroMag-mean()"         "mean_of_tBodyGyroMag-std()"         
+[41] "mean_of_tBodyGyroJerkMag-mean()"     "mean_of_tBodyGyroJerkMag-std()"     
+[43] "mean_of_fBodyAcc-mean()-X"           "mean_of_fBodyAcc-mean()-Y"          
+[45] "mean_of_fBodyAcc-mean()-Z"           "mean_of_fBodyAcc-std()-X"           
+[47] "mean_of_fBodyAcc-std()-Y"            "mean_of_fBodyAcc-std()-Z"           
+[49] "mean_of_fBodyAccJerk-mean()-X"       "mean_of_fBodyAccJerk-mean()-Y"      
+[51] "mean_of_fBodyAccJerk-mean()-Z"       "mean_of_fBodyAccJerk-std()-X"       
+[53] "mean_of_fBodyAccJerk-std()-Y"        "mean_of_fBodyAccJerk-std()-Z"       
+[55] "mean_of_fBodyGyro-mean()-X"          "mean_of_fBodyGyro-mean()-Y"         
+[57] "mean_of_fBodyGyro-mean()-Z"          "mean_of_fBodyGyro-std()-X"          
+[59] "mean_of_fBodyGyro-std()-Y"           "mean_of_fBodyGyro-std()-Z"          
+[61] "mean_of_fBodyAccMag-mean()"          "mean_of_fBodyAccMag-std()"          
+[63] "mean_of_fBodyBodyAccJerkMag-mean()"  "mean_of_fBodyBodyAccJerkMag-std()"  
+[65] "mean_of_fBodyBodyGyroMag-mean()"     "mean_of_fBodyBodyGyroMag-std()"     
+[67] "mean_of_fBodyBodyGyroJerkMag-mean()" "mean_of_fBodyBodyGyroJerkMag-std()" 
+
+From here on, all referenced files are contained in the extracted
+UCI HAR Dataset heirarchy.
+
+"subject" (character) was obtained from (what amounts to) concatenation of the subject
+IDs from the data sets "subject_text.txt" and "subject_train.txt"
+
+"activity_level" (character) is also a concatentation of the numerically coded
+data sets "y_test.txt" and "y_train.txt" with language labels provided by
+"activity_levels.txt"
+
+The remaining variables are means (grouped by combinations of "subject"
+and "activity_level") of those variables in the original data sets
+that are themselves means or standard deviations.
+
+The variable names of these original means and standard deviations were
+extracted from the variables in "X_test.txt" and "Y_test.txt" with language
+labels described in "features.txt" and "features_info.test". This was accomplished
+by selecting those that had the character string "mean()" or "std()" in their name.
+
+From here, grouped means of these variables were calculated and named by
+appending "mean_of_" to the original variable. For instance,
+"mean_of_tBodyAcc-mean()-X" corresponds to "tBodyAcc-mean()-X", and so on.
